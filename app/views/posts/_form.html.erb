@@ -1,0 +1,11 @@
+<h1>Posts (jQuery UJS style)</h1>
+
+<%= form_tag(posts_path, method: :post, data: { remote: true }) do %>
+  <%= text_field_tag :title, nil, placeholder: "Title" %>
+  <%= text_area_tag :content, nil, placeholder: "Content" %>
+  <%= submit_tag "Create Post" %>
+<% end %>
+
+<ul id="posts-list">
+  <%= render @posts %>
+</ul>
